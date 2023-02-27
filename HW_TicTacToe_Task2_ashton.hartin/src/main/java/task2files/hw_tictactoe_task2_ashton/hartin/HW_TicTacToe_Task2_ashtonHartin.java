@@ -3,16 +3,18 @@ import java.util.Scanner;
 public class HW_TicTacToe_Task2_ashtonHartin 
 {
     public static void main(String[] args) 
-    {   
+    {  
+        //Tic Tac Toe Board
         char[][] board = {{' ', '|', ' ', '|', ' '},
                           {'-', '+', '-', '+', '-'},
                           {' ', '|', ' ', '|', ' '},
                           {'-', '+', '-', '+', '-'},
                           {' ', '|', ' ', '|', ' '}};
-        
+       
         char PLAYER = ' ';
         char SYSTEM = ' ';
         
+        //Asks the user to select if they want to be either X or O or if they want to exit early.
         Scanner scan1  = new Scanner(System.in);
         System.out.println("Please enter which symbol you want to play\n1: X\n2: O\n0: Exit");
         int symbolChoice = scan1.nextInt();
@@ -31,6 +33,7 @@ public class HW_TicTacToe_Task2_ashtonHartin
             System.exit(0);
         }
         
+        //Asks the user if they want to take the first turn.
         Scanner scan2 = new Scanner(System.in);
         System.out.println("Do you wish to take the first turn?\nType either YES or NO: ");
         String turnOne = scan2.nextLine();
@@ -38,6 +41,7 @@ public class HW_TicTacToe_Task2_ashtonHartin
         {
             printBoard(board);
             
+            //Asks the user where the user wants to put there symbol.
             Scanner scan3 = new Scanner(System.in);
             System.out.println("Enter a position (1-9 or enter 0 to exit game): ");
             int position = scan3.nextInt();
@@ -60,6 +64,7 @@ public class HW_TicTacToe_Task2_ashtonHartin
         printBoard(board);
     }
     
+    //Displays the Tic Tac Toe board.
     public static void printBoard(char[][] board)
     {
         for(char[] row : board)
@@ -72,6 +77,7 @@ public class HW_TicTacToe_Task2_ashtonHartin
         }
     }
     
+    //Places the symbol of the user or the computer in the board.
     public static void chooseAndPlaceSymbol(char[][] board, int position, char PLAYER, char SYSTEM, String USER)
     {
         char symbol = ' ';
